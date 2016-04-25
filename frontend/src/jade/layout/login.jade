@@ -1,0 +1,16 @@
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    title #{sys_name}
+    link(href='/img/favicon.ico', type='image/x-icon', rel='shortcut icon')
+    link(rel='stylesheet', type='text/css', href='/css/vendor.css', charset='utf-8' )
+    link(rel='stylesheet', type='text/css', href='/css/style.css', charset='utf-8')
+    link(rel='stylesheet', type='text/css', href='/css/site.css', charset='utf-8')
+  body#site
+    // START page-wrapper
+    #page-wrapper.qh-login
+      block page_content
+    // END page-wrapper
+    include ../base/dimmerTips/message
+    script(src='/js/vendor.js', data-main='/js/app_login', type='text/javascript', charset='utf-8')
+

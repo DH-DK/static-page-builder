@@ -1,0 +1,54 @@
+var AppSet = {
+    dialog: {},
+    info: (function () {
+        var _Body = document.getElementsByTagName('body')[0],
+            _Content = document.getElementById('page-content');
+        var _info = {
+            main: _Body.id,
+            view: _Content.dataset.qhView,
+        };
+        ['sidebar-alt', 'sidebar'].forEach(function (element) {
+            try{
+                var _node = document.querySelector('#' + element + ' .' + _info.view);
+                _node.classList.add('active');
+                if(element === 'sidebar-alt'){
+                    _node.parentNode.parentNode.classList.add('active');
+                    return false;
+                }
+                ;
+                _node.parentNode.classList.add('active');
+                _node.parentNode.parentNode.querySelector('.title').classList.add('active');
+            }catch(e){
+
+            };
+
+        });
+        document.getElementById('sidebar').classList.remove('loading');
+        return _info;
+    }()),
+    modules: ['module_compiles','module_tool', 'module_config', 'module_init', 'module_list', 'module_form']
+};
+require(AppSet.modules, function () {
+    var module_config = require('module_config');
+    AppSet.CONFIG = module_config[AppSet.info.view];
+    AppSet.info.url = $.myToolSet.parseUrl();
+    AppSet.info.model = AppSet.info.view.split('-')[0];
+    switch (AppSet.CONFIG.pageType) {
+        case 'table':
+            var module_table = require('module_list');
+            AppSet.table = new module_table.Table({$dom: $('#main-table'), config: AppSet.CONFIG});
+            break;
+        case 'form':
+            var module_form = require('module_form');
+            module_form.Form({$dom: $('.content-body.form'), config: AppSet.CONFIG});
+            break;
+        default :
+
+            break;
+    }
+    ;
+    if (AppSet.info.model) {
+        require(['model_' + AppSet.info.model]);
+    }
+    ;
+});

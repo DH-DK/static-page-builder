@@ -1,0 +1,27 @@
+.ui{
+  .modal{
+    .content{
+      padding: 10px;
+      .ui.grid{
+        .ui.divider{
+          margin: 0 15px;
+          border-top: none;
+          border-bottom: dotted 1px #efefef;
+        }
+        >.column{
+          min-height: 35px;
+          &.aligned{
+            line-height: 35px;
+          }
+          .disabled{
+            border: none !important;
+          }
+          input[disabled]{
+            border: none !important;
+          }
+        }
+
+      }
+    }
+  }
+}

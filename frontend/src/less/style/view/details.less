@@ -1,0 +1,75 @@
+#page-content.qh-detail{
+  min-height: 100%;
+  overflow-y: auto;
+  .content-body{
+    min-height: 700px;
+    &.ui.grid{
+      margin: 10px 10px;
+      padding-bottom: 15px;
+      min-width: 1000px;
+      box-shadow: 0 0 3px #ccc;
+      border-radius: 2px;
+      .header{
+        margin-bottom: 10px;
+        padding-left: 20px;
+        border-left: 4px solid #FFA600;
+      }
+      table.table {
+        td,th{
+          text-align: center;
+        }
+        td:nth-child(odd){
+          background-color:rgb(240, 240, 240);
+        }
+        td:nth-child(even){
+          text-align: left;
+          text-indent: 12px;
+        }
+        &.qh-goodslist tbody>{
+          td:nth-child(odd){
+            background-color:#fff;
+          }
+          td:nth-child(even){
+            text-align: center;
+          }
+        }
+        .qh-logistics>{
+          td{
+            height: 36px;
+            line-height: 36px;
+            padding: 0;
+            position: relative;
+          }
+          td:nth-child(1){
+            background-color:#fff;
+            &::before{
+              display: inline-block;
+              position: relative;
+              z-index: 3;
+              content: " ";
+              width: 1px;
+              height: 100%;
+              background: ~'rgba(204,204,204,.7)';
+            }
+            &::after{
+              display: inline-block;position: absolute;
+              content: " ";
+              top: 12px;
+              left: 50%;
+              margin-left: -6.5px;
+              z-index: 4;
+              width: 12px;
+              height: 12px;
+              background: #66CC68;
+              border-radius: 6px;
+            }
+          }
+          td:nth-child(2){
+            border-left: none;
+          }
+        }
+      }
+    }
+
+  }
+}

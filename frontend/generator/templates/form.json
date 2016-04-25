@@ -1,0 +1,12 @@
+{
+  "pageType": "form",
+  "formType": "edit",
+  "submitUrl": "/app/site/model/form_submit_port",
+  "getData": {
+    "url": "/app/site/model/detail_get_port"
+  },
+  "setValues": {
+    "state": 100,
+    "if_external": 100
+  }
+}

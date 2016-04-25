@@ -1,0 +1,15 @@
+{
+  "name": "microstock",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-dust": "^3.0.0",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.7.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-less": "^3.0.5"
+  }
+}

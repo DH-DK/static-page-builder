@@ -1,0 +1,182 @@
+define('module_config', [], function () {
+    return {
+
+        "user-list": {
+            "pageType": "table-common",
+            "isInit": true,
+            "queryUrl": "/app/site/model/model_list_port",
+            "columns": [
+                {
+                    "title": "工号",
+                    "data": "account"
+                },
+                {
+                    "title": "姓名",
+                    "data": "name"
+                },
+                {
+                    "title": "手机号",
+                    "data": "mobile"
+                },
+                {
+                    "title": "状态",
+                    "data": "state"
+                },
+                {
+                    "title": "操作",
+                    "data": null
+                }
+            ],
+            "columnDefs": [
+                {
+                    "targets": 0,
+                    "type": "href"
+                },
+                {
+                    "targets": -2,
+                    "type": "checkbox",
+                    "texts": ['关闭', '开启'],
+                    "checked": 100,
+                },
+                {
+                    "targets": -1,
+                    "type": "button",
+                    "members": [
+                        "edit","tests"
+                    ],
+                    "buttons": {
+                        "tests": "测试按钮"
+                    },
+                    "disabled": {
+                        "apply_state": {
+                            "val": [
+                                100
+                            ],
+                            "btn": [
+                                "edit"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "operation": {
+                "detail": {
+                    "type": "_blank",
+                    "url": "/app/admin/account/admin_account_edit_port"
+                },
+                "edit": {
+                    "type": "_blank",
+                    "url": "/app/admin/account/admin_account_edit_port"
+                },
+
+            },
+            "getDetail": {
+                "url": "/app/site/user/user_edit_port"
+            },
+            "page_add":{
+                "submitUrl": "/app/site/user/user_add_port",
+                "setValues": {
+                    "name": "Jack2",
+                    "gender": "male",
+                    "colors": [
+                        "red",
+                        "grey"
+                    ],
+                    "username": "jlukic",
+                    "password": "youdliketoknow",
+                    "frequency": "2",
+                    "terms": true
+                },
+            },
+            "page_edit":{
+                "submitUrl": "/app/site/user/user_add_port",
+                "getData": {
+                    "url": "/app/site/user/user_edit_port"
+                }
+            },
+        },
+        "user-add": {
+            "pageType": "form",
+            "submitUrl": "/app/site/user/user_add_port",
+            "setValues": {
+                "name": "Jack2",
+                "gender": "male",
+                "colors": [
+                    "red",
+                    "grey"
+                ],
+                "username": "jlukic",
+                "password": "youdliketoknow",
+                "frequency": "2",
+                "terms": true
+            }
+        },
+        "user-edit": {
+            "pageType": "form",
+            "submitUrl": "/app/site/user/user_add_port",
+            "getData": {
+                "url": "/app/site/user/user_edit_port"
+            }
+        },
+        "manage-list": {
+            "pageType": "table-common",
+            "isInit": true,
+            "queryUrl": "/app/site/manage/manage_list_port",
+            "columns": [
+                {
+                    "title": "用户名",
+                    "data": "name"
+                },
+                {
+                    "title": "手机号",
+                    "data": "mobile"
+                },
+                {
+                    "title": "工号",
+                    "data": "account"
+                },
+                {
+                    "title": "角色",
+                    "data": "role_name"
+                },
+                {
+                    "title": "状态",
+                    "data": "account_state_name"
+                },
+                {
+                    "title": "操作",
+                    "data": null
+                }
+            ],
+            "columnDefs": [
+                {
+                    "targets": -1,
+                    "type": "button",
+                    "members": [
+                        "edit"
+                    ],
+                    "disabled": {
+                        "apply_state": {
+                            "val": [
+                                100
+                            ],
+                            "btn": [
+                                "edit"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "operation": {
+                "edit": {
+                    "type": "_blank",
+                    "url": "/app/site/knight/knight-edit_view"
+                },
+                "add": {
+                    "type": "_blank",
+                    "url": "/app/site/knight/knight-add_view"
+                }
+            }
+        }
+    };
+});

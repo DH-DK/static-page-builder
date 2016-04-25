@@ -1,0 +1,97 @@
+{
+  "site": {
+    "models":[
+      {
+        "model": "dispatch",
+        "title": "调度中心",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "调度控制台",
+            "name": "console",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "statistics",
+        "title": "数据统计",
+        "icon": "upload",
+        "views": [
+          {
+            "title": "订单详情查询",
+            "name": "order_list",
+            "type": "list"
+          },
+          {
+            "title": "推单记录",
+            "name": "order_push",
+            "type": "list"
+          },
+          {
+            "title": "商户订单统计",
+            "name": "order_partner",
+            "type": "list"
+          },
+          {
+            "title": "商圈订单统计",
+            "name": "order_dc",
+            "type": "list"
+          },
+          {
+            "title": "骑士订单统计",
+            "name": "order_courier",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "business",
+        "title": "业务管理",
+        "icon": "upload",
+        "views": [
+          {
+            "title": "服务产品管理",
+            "name": "product",
+            "type": "list"
+          },
+          {
+            "title": "签约商户管理",
+            "name": "contract",
+            "type": "list"
+          },{
+            "title": "骑士管理",
+            "name": "courier",
+            "type": "list"
+          },
+          {
+            "title": "站点管理",
+            "name": "dc",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "system",
+        "title": "系统管理",
+        "icon": "upload",
+        "views": [
+          {
+            "title": "用户管理",
+            "name": "user",
+            "type": "list"
+          }
+        ]
+      }
+    ],
+    "system": {
+      "app_url_base": "/app/site/",
+      "sys_name": "调度系统",
+      "login_out": {
+        "text": "退出系统",
+        "url": "login/site_login_out"
+      }
+    }
+  }
+
+}

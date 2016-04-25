@@ -1,0 +1,60 @@
+extends ../../layout/site
+block page_content
+    #page-content.qh-form(data-qh-view='business-product',  data-qh-role="edit")
+      // content-header
+      .content-header
+      // content-body
+      form.content-body.ui.form
+        .inline.fields
+          .eight.wide.field
+            label 产品编号
+            input(type='hidden', name='id')
+            input(type='text', name='code', disabled='disabled')
+        .inline.fields
+          .eight.wide.field
+            label 产品名称
+            input(type='text', name='name')
+        .inline.fields
+          .eight.wide.field
+            label 营业时间
+            input(type='text', name='shipping_time_span')
+            span -
+            input(type='text', name='shipping_time_span')
+        .inline.fields
+          .eight.wide.field
+            label 取货模式
+            .ui.fluid.selection.dropdown
+              i.dropdown.icon
+              input(type='hidden', name='pickup_mode')
+              .default.text 取货模式
+              .menu
+                each val in [{code:10,name:'门店取货'},{code:30,name:'站点取货'}]
+                  .item(data-value='#{val.code}') #{val.name}
+
+        .inline.fields
+          .eight.wide.field
+            label 是否驻店
+            each val in [{code:true,name:'是'},{code:false,name:'否'}]
+              .ui.radio.checkbox
+                input(type='radio', name='stay_shop', value='#{val.code}')
+                label #{val.name}
+        .inline.fields
+          .eight.wide.field
+            label 配送模式
+            .ui.fluid.selection.dropdown
+              i.dropdown.icon
+              input(type='hidden', name='delivery_mode')
+              .default.text 配送模式
+              .menu
+                each val in [{code:10,name:'及时达'},{code:20,name:'预约达'}]
+                  .item(data-value='#{val.code}') #{val.name}
+        .inline.fields
+          .four.wide.field
+            label 配送时间
+            input(type='text', name='shipping_time_interval')
+          .four.wide.field
+            input(type='text', name='shipping_time_interval_unit', value="分钟", disabled='disabled')
+        .inline.fields
+          .eight.wide.field.center.aligned
+            .ui.black.button 取消
+            .ui.green.button 提交

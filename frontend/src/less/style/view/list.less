@@ -1,0 +1,73 @@
+#page-content.qh-list{
+  .content-header{
+    .ui.form{
+      padding: 1rem;
+      margin-bottom: 0;
+      background-color: rgb(255,255,255);
+      border: none;
+      .inline.fields{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      .field{
+        >label{
+          line-height: @query-input-text_height;
+          font-size: @query-font-size1;
+          white-space: nowrap;
+        }
+        >input,>.selection.dropdown{
+          font-size: @query-font-size1;
+          width: 100%;
+          display: inline-block;
+          height: @query-input-text_height;
+          min-height: @query-input-text_height;
+          box-sizing: border-box;
+          line-height: @query-input-text_height;
+          margin: 0;
+        }
+        >input.datepick{
+          width: ~'calc(49% - 40px)' !important;
+          min-width: ~'calc(49% - 40px)' !important;
+          + i{
+            width: 4%;
+            text-align: center;
+            line-height: @query-input-text_height;
+            &::after{
+              content: "-";
+            }
+          }
+        }
+        >.selection.dropdown{
+          padding-top: 0;
+          padding-bottom: 0;
+          .dropdown.icon{
+            margin-top: 0;
+          }
+          .text{
+            white-space: nowrap;
+          }
+        }
+      }
+      .ui.button{
+        height: @query-button_height;
+        padding:0  @query-button_width_padding;
+        line-height: @query-button_height;
+      }
+    }
+  }
+  .content-body{
+    min-height: 650px;
+    padding-bottom: 40px;
+
+  }
+  .content-footer{
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    .qh-pagination{
+
+    }
+  }
+
+}

@@ -1,0 +1,48 @@
+.ui.small.coupled.first.modal.qh-add
+  .header Header
+  .content
+    form.ui.form
+      .inline.fields
+        .eight.wide.field
+           include ../../base/input_text/account
+      .inline.fields
+        .eight.wide.field.disabled
+          include ../../base/input_text/name
+      .inline.fields
+        .eight.wide.field.disabled
+          include ../../base/input_text/mobile
+      .inline.fields
+        .eight.wide.field
+          label 角色
+          include ../../base/dropdown/role
+      .inline.fields
+        .eight.wide.field
+          include ../../base/radio/manage_state
+      .inline.fields
+  .actions
+    .ui.approve.button 提交
+    .ui.cancel.button 取消
+.ui.small.coupled.first.modal.qh-edit
+  .header Header
+  .content
+    form.ui.form
+      .inline.fields
+        .eight.wide.field.disabled
+          include ../../base/input_text/account
+      .inline.fields
+        .eight.wide.field.disabled
+          include ../../base/input_text/name
+      .inline.fields
+        .eight.wide.field.disabled
+          include ../../base/input_text/mobile
+      .inline.fields
+        .eight.wide.field
+          label 角色
+          include ../../base/dropdown/role
+      .inline.fields
+        .eight.wide.field
+          include ../../base/radio/manage_state
+      .inline.fields
+  .actions
+    .ui.approve.button 提交
+    .ui.cancel.button 取消

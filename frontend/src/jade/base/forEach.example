@@ -1,0 +1,24 @@
+.inline.fields
+  .eight.wide.field
+    label 是否驻店
+    each val in [{code:100,name:'是'},{code:-100,name:'否'}]
+      .ui.radio.checkbox
+        input(type='radio', name='stay_shop', value='#{val.code}')
+        label #{val.name}
+
+
+.inline.fields
+  .eight.wide.field
+    label 配送模式
+    .ui.fluid.selection.dropdown
+      i.dropdown.icon
+      input(type='hidden', name='delivery_mode')
+      .default.text 配送模式
+      .menu
+        each val in [{code:10,name:'及时达'},{code:20,name:'预约达'}]
+          .item(data-value='#{val.code}') #{val.name}
+
+
+
+
+

@@ -1,0 +1,52 @@
+extends ../../layout/site
+block page_content
+    #page-content.qh-detail(data-qh-view='business-product', data-qh-role="detail")
+      // content-header
+      .content-header
+      // content-body
+      .ui.grid.content-body
+        .sixteen.wide.column.qh-preload.detail-content
+          table.ui.celled.table
+              thead
+                tr
+                  th(colspan='4') 产品基本信息
+              tbody
+                tr
+                  td.three.wide
+                    | 产品编号
+                  td.three.wide
+                    | {.code}
+                  td.three.wide
+                    | 产品名称
+                  td.three.wide
+                    | {.name}
+                tr
+                  td.three.wide
+                    | 营业时间
+                  td.three.wide
+                    | {.shipping_time_span[0]} - {.shipping_time_span[1]}
+                  td.three.wide
+                  td.three.wide
+           table.ui.celled.table
+               thead
+                 tr
+                   th(colspan='4') 产品属性
+               tbody
+                tr
+                  td.three.wide
+                    | 取货模式
+                  td.three.wide
+                    | {.pickup_mode_name}
+                  td.three.wide
+                    | 是否驻店
+                  td.three.wide
+                    | {.stay_shop_name}
+                tr
+                  td.three.wide
+                    | 配送模式
+                  td.three.wide
+                    | {.delivery_mode_name}
+                  td.three.wide
+                    | 配送时间
+                  td.three.wide
+                    | {.shipping_time_interval} {.shipping_time_interval_unit}

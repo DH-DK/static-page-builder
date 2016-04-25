@@ -1,0 +1,42 @@
+#page-content{
+  width: 100%;
+  height: ~"calc(100% " - @navbar_height1 ~")";
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background-clip: content-box;
+  background-color: rgb(255,255,255);
+  .content-header{
+    .ui{
+      &.breadcrumb{
+        margin-bottom: 5px;
+        font-size: @breadcrumb-font-size1;
+      }
+    }
+  }
+  .content-body{
+    background-color: rgb(255,255,255);
+    border: none;
+    padding-top: 15px;
+    position: relative;
+    &.ui.grid{
+      .row{
+        >.aligned.column{
+          line-height: 35px;
+        }
+
+        .ui.divider{
+          margin-left: 15px;
+          border-top: none;
+          border-bottom: dotted 1px #efefef;
+          margin-right: 15px;
+        }
+      }
+    }
+
+
+  }
+
+}

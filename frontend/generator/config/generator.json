@@ -1,0 +1,10 @@
+{
+  "path": {
+    "generator": "./generator/config/",
+    "tmpl": "./generator/templates/",
+    "jade": "./src/jade/site",
+    "mod": "./src/js/model/",
+    "modCfg": "./src/js/config/",
+    "configJade": "./config/jade/"
+  }
+}

@@ -1,0 +1,18 @@
+extends ../../layout/site
+block page_content
+    #page-content.qh-list(data-qh-view='statistics-order_list')
+      // content-header
+      .content-header
+        form.ui.form
+          .inline.fields
+            .three.wide.field
+              label 城  市
+              include ../../base/dropdown/city
+            .three.wide.field
+              include ../../base/input_text/name
+            include ../../base/table/queryBtn
+            include ../../base/table/addBtn
+      // content-body
+      .content-body
+        include ../../base/table/main_table
+      .content-footer

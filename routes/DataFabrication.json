@@ -1,0 +1,96 @@
+{
+  "model_list_port": {
+    "ok": true,
+    "message": "\u6210\u529f",
+    "data": {
+      "data": [
+        {
+          "id": 19,
+          "no": "100005",
+          "name": "ceshi1",
+          "email": "123455@sina.com",
+          "work_state_name": "20333-21-123",
+          "sex_name": "\u7537",
+          "id_card_sn": "111111111111111111",
+          "mobile": "17000000000",
+          "city_name": "\u5317\u4eac\u5e02",
+          "work_state_name": "\u5728\u804c",
+          "hired_date": "2016-04-05"
+        },
+        {
+          "id": 18,
+          "no": "100004",
+          "name": "ceshi2",
+          "email": "123455@sina.com",
+          "work_state_name": "20333-21-123",
+          "sex_name": "\u7537",
+          "id_card_sn": "111111111111111111",
+          "mobile": "17090054750",
+          "city_name": "\u5317\u4eac\u5e02",
+          "work_state_name": "\u5728\u804c",
+          "hired_date": "2016-04-01"
+        }
+      ],
+      "page_info": {
+        "page_no": 1,
+        "page_size": 30,
+        "total_page": 1,
+        "total_no": 2
+      }
+    }
+  },
+  "city_list_port":  {
+    "ok": true,
+    "message": "\u6210\u529f",
+    "data": {
+      "data": [
+        {
+          "id": 19,
+          "no": "100005",
+          "name": "beijing",
+          "email": "123455@sina.com",
+          "work_state_name": "20333-21-123",
+          "sex_name": "\u7537",
+          "id_card_sn": "111111111111111111",
+          "mobile": "17000000000",
+          "city_name": "\u5317\u4eac\u5e02",
+          "work_state_name": "\u5728\u804c",
+          "hired_date": "2016-04-05"
+        },
+        {
+          "id": 18,
+          "no": "100004",
+          "name": "shanghai",
+          "email": "123455@sina.com",
+          "work_state_name": "20333-21-123",
+          "sex_name": "\u7537",
+          "id_card_sn": "111111111111111111",
+          "mobile": "17090054750",
+          "city_name": "\u5317\u4eac\u5e02",
+          "work_state_name": "\u5728\u804c",
+          "hired_date": "2016-04-01"
+        }
+      ]
+
+    }
+  },
+  "detail_get_port": {
+    "ok": true,
+    "message": "\u6210\u529f",
+    "data": {
+      "data": {
+        "id": 19,
+        "no": "100005",
+        "name": "ceshi1",
+        "email": "123455@sina.com",
+        "work_state_name": "20333-21-123",
+        "sex_name": "\u7537",
+        "id_card_sn": "111111111111111111",
+        "mobile": "17000000000",
+        "city_name": "\u5317\u4eac\u5e02",
+        "work_state_name": "\u5728\u804c",
+        "hired_date": "2016-04-05"
+      }
+    }
+  }
+}

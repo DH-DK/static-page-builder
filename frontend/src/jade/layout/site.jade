@@ -1,0 +1,29 @@
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    title #{sys_name}
+    link(href='/img/favicon.ico', type='image/x-icon', rel='shortcut icon')
+    link(rel='stylesheet', type='text/css', href='/css/vendor.css', charset='utf-8' )
+    link(rel='stylesheet', type='text/css', href='/css/style.css', charset='utf-8')
+    link(rel='stylesheet', type='text/css', href='/css/site.css', charset='utf-8')
+  body#site
+    // START page-wrapper
+    #page-wrapper
+      // START page-container
+      #page-container.sidebar-partial.sidebar-visible-lg
+        // START sidebar
+        include ../base/sidebar
+        // END sidebar
+        // START main-container
+        #main-container
+          // navbar
+          include ../base/navbar
+          // content
+          block page_content
+        // END main-container
+        // END main-container
+      // END page-container
+    // END page-wrapper
+    include ../base/dimmerTips/message
+    script(src='/js/vendor.js', data-main='/js/app_site', type='text/javascript', charset='utf-8')
+

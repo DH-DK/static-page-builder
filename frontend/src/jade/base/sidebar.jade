@@ -1,0 +1,26 @@
+#sidebar-alt
+  .qh-sys
+    button.ui.icon.button.btn-bar
+      i.sidebar.icon
+  .qh-icon-list-bg
+    each module in navbar
+          .ui.left.pointing.dropdown.icon.button
+              i.icon(class= module.icon)
+              .menu
+                each view in module.views
+                  a.item(href= app_url_base + view.url, class= view.view)= view.title
+#sidebar.loading
+  .qh-sys
+    | #{sys_name}
+    button.ui.icon.button.btn-bar
+      i.sidebar.icon
+  each module in navbar
+      .ui.accordion
+          .title
+            i.icon(class= module.icon)
+            | #{module.title}
+            i.angle.left.icon
+          .content
+            each view in module.views
+              a(href= app_url_base + view.url, class= view.view)= view.title
+  .qh-logo

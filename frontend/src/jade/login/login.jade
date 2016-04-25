@@ -1,0 +1,26 @@
+extends ../layout/login
+block page_content
+    #page-content.ui.center.aligned.grid(data-qh-view='login-sign_in')
+      .column
+        h2.ui.center.aligned.image.header
+          .content
+            | o3调度系统
+        form.ui.large.form
+          .fields
+            .sixteen.wide.field
+              .ui.left.icon.input
+                i.user.icon
+                input(type='text', name='account', placeholder='账号')
+          .fields
+            .twelve.wide.field
+              .ui.left.icon.input
+                i.lock.icon
+                input(type='text', name='verify_code', placeholder='验证码')
+            .four.wide.field
+              a#get_code.ui.fluid.large.button 获取验证码
+          .fields
+            .sixteen.wide.field
+              .ui.fluid.large.teal.submit.button 登录
+          .fields
+            .sixteen.wide.field
+              .ui.visible.message

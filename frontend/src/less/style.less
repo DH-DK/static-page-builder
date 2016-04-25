@@ -1,0 +1,40 @@
+@import "style/variable.less";
+
+body{
+  background: none;
+}
+i {
+  font-style: normal;
+}
+
+//plugin
+@import "style/plugin/dataTable.less";
+@import "style/plugin/semantic.less";
+@import "style/plugin/timePicker.less";
+
+//layout
+#page-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#main-container{
+  background-color: rgb(245,245,245);
+}
+@import "style/partial/sidebar.less";
+@import "style/partial/navbar.less";
+@import "style/partial/content.less";
+//view
+@import "style/view/list.less";
+@import "style/view/form.less";
+@import "style/view/details.less";
+@import "style/view/login.less";
+@import "style/view/error.less";
+//components
+@import "style/components/message.less";
+@import "style/components/modal.less";
+//template about
+.qh-preload{
+  opacity: 0;
+}

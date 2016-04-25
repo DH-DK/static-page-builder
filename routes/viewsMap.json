@@ -1,0 +1,20 @@
+{
+  "site":{
+    "user":{
+      "user_list_view": "list",
+      "user_add_view": "add",
+      "user_edit_view": "edit"
+    },
+    "knight":{
+      "knight_list_view": "list",
+      "knight_add_view": "add",
+      "knight_edit_view": "edit"
+    },
+    "manage":{
+      "manage_list_view": "list"
+    }
+  },
+  "admin":{
+
+  }
+}

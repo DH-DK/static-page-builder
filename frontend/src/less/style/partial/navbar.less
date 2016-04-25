@@ -1,0 +1,22 @@
+#main-container{
+  position: relative;
+  > .navbar{
+    padding: 6px 8px 6px 0;
+    height: @navbar_height1;
+    background-color: #fff;
+    width: 100%;
+    text-align: right;
+    position: relative;
+    z-index: 999;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px #dcdcdc;
+    > .ui.label{
+      padding: .4em;
+      background-color: #fff;
+    }
+    > .ui.button:nth-child(n+2){
+      padding: .4em;
+      background-color: #f1f1f1;
+    }
+  }
+}

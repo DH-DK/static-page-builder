@@ -1,0 +1,87 @@
+.dataTables_wrapper {
+  table {
+    background: #FFF;
+    box-shadow: none;
+    border-radius: .28571429rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: none;
+    margin: 0 !important;
+  }
+  .datatables_scrollbody {
+    border: none !important;
+  }
+}
+
+.dataTables_scrollHead {
+  table {
+    border: none !important;
+    border-bottom: none !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    thead tr {
+      th {
+        border-bottom: ~'1px solid rgba(34,36,38,.1)';
+        border: none !important;
+        background: #f0f0f0;
+        white-space: nowrap;
+        font-size: 14px !important;
+      }
+    }
+  }
+}
+
+.dataTables_scrollBody {
+  border-bottom: none !important;
+  table {
+    thead {
+      th {
+        white-space: nowrap;
+      }
+    }
+    border: none !important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    tbody {
+      tr.even {
+        background-color: #F9F9F9;
+      }
+      td {
+        font-size: 14px !important;
+        border: none !important;
+        border-bottom: #E8E8E8 solid 1px !important;
+        border-top: ~'1px solid rgba(34,36,38,.15)';
+        a {
+          cursor: pointer;
+        }
+        .ui.toggle.checkbox input{
+          ~ label{
+            color: #f20d0d !important;
+            i:nth-child(2){
+              display: none;
+            }
+          }
+          &:checked ~ label{
+            color: #00ff00 !important;
+            i:nth-child(1){
+              display: none;
+            }
+            i:nth-child(2){
+              display: inline-block;
+            }
+          }
+        }
+        
+        text-align: center;
+        padding: 10px 0;
+        .ui.button {
+          font-size: 14px;
+          font-weight: normal;
+          padding: 3px 8px;
+
+        }
+
+      }
+    }
+  }
+}
