@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'web')));
 //route 暂时的 这个路由有点太2了 早晚得改
 var url = require('url');
 var viewsMap = require('./routes/viewsMap.json');
+app.get('/', function(req, res, next) {
+    res.render('site/business/product.html');
+});
 app.get('/app/:base/:module/:view', function(req, res, next) {
     var _path = url.parse(req.url).pathname.split('/');
     //_path.splice(0,2),_path.splice(_path.length - 1,1,viewsMap[req.params.base][req.params.module][req.params.view]);
