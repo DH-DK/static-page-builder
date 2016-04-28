@@ -1,0 +1,21 @@
+extends ../../layout/site
+block page_content
+    #page-content.qh-form(data-qh-view='order-manual')
+      // content-header
+      .content-header
+      // content-body
+      form.content-body.ui.form
+        .inline.fields
+          .eight.wide.field
+            include ../../base/input_text/name
+        .inline.fields
+          .eight.wide.field
+            label 所属城市
+            include ../../base/dropdown/city
+        .inline.fields
+          .eight.wide.field
+            include ../../base/radio/state
+        .inline.fields
+          .eight.wide.field
+            .ui.black.button 取消
+            .ui.green.button 提交

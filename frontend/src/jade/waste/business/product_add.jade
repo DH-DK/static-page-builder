@@ -1,25 +1,20 @@
 extends ../../layout/site
 block page_content
-    #page-content.qh-form(data-qh-view='business-product',  data-qh-role="edit")
+    #page-content.qh-form(data-qh-view='business-product',  data-qh-role="add")
       // content-header
       .content-header
       // content-body
       form.content-body.ui.form
         .inline.fields
           .eight.wide.field
-            label 产品编号
-            input(type='hidden', name='id')
-            input(type='text', name='code', disabled='disabled')
-        .inline.fields
-          .eight.wide.field
             label 产品名称
             input(type='text', name='name')
         .inline.fields
-          .eight.wide.field
+          .eight.wide.field.qh-timePicker
             label 营业时间
-            input(type='text', name='shipping_time_span')
+            input.time.start(type='text', name='shipping_time_span')
             span -
-            input(type='text', name='shipping_time_span')
+            input.time.end(type='text', name='shipping_time_span')
         .inline.fields
           .eight.wide.field
             label 取货模式

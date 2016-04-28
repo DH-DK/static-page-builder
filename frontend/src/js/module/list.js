@@ -56,6 +56,17 @@ define('module_list',[],function () {
             // TODO: Structure and method need to be optimized, it's so stupid,i don't need so many sames
             'typeList': ['edit', 'confirm', 'post', 'detail'],
             'edit': {
+                '_self': function (event) {
+                    var btnName = this.className.match(/qh-\w*/)[0].slice(3);
+                    var tr = this.parentNode.parentNode, $table = $(this).parents('table.dataTable');
+                    var trData = $table.DataTable().row(tr).data();
+                    var config = AppSet.CONFIG.operation[btnName];
+                    var newPage = config.url + '?';
+                    config.fields && config.fields.forEach(function (value) {
+                        newPage += value + '=' + trData[value] + '&';
+                    });
+                    window.location.href = newPage;
+                },
                 '_blank': function () {
                     var newWindow = window.open("about:blank", "_blank");
                     var nowWindow = window;
@@ -104,6 +115,9 @@ define('module_list',[],function () {
                 },
             },
             'add': {
+                '_self': function (event) {
+                    window.location.href = event.data.config.url;
+                },
                 '_blank': function (event) {
                     var _config = event.data.config;
                     var newWindow = window.open("about:blank", "_blank");

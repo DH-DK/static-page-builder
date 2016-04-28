@@ -2,96 +2,270 @@
   "site": {
     "models":[
       {
-        "model": "dispatch",
-        "title": "调度中心",
+        "model": "order",
+        "title": "订单管理",
         "icon": "Dashboard",
         "views": [
           {
-            "title": "调度控制台",
-            "name": "console",
+            "title": "手动发单",
+            "name": "manual",
+            "type": "form"
+          },
+          {
+            "title": "批量导入",
+            "name": "import",
+            "type": "form"
+          },
+          {
+            "title": "订单列表",
+            "name": "list",
             "type": "list"
           }
         ]
       },
       {
-        "model": "statistics",
-        "title": "数据统计",
+        "model": "stock",
+        "title": "补货单管理",
         "icon": "upload",
         "views": [
           {
-            "title": "订单详情查询",
+            "title": "创建补货单",
+            "name": "order_add",
+            "type": "form"
+          },
+          {
+            "title": "补货单列表",
             "name": "order_list",
             "type": "list"
-          },
+          }
+        ]
+      },
+      {
+        "model": "goods",
+        "title": "商品管理",
+        "icon": "upload",
+        "views": [
           {
-            "title": "推单记录",
-            "name": "order_push",
+            "title": "商品列表",
+            "name": "list",
             "type": "list"
           },
           {
-            "title": "商户订单统计",
-            "name": "order_partner",
-            "type": "list"
-          },
-          {
-            "title": "商圈订单统计",
-            "name": "order_dc",
-            "type": "list"
-          },
-          {
-            "title": "骑士订单统计",
-            "name": "order_courier",
+            "title": "店铺商品列表",
+            "name": "shop_list",
             "type": "list"
           }
         ]
       },
       {
-        "model": "business",
-        "title": "业务管理",
+        "model": "partner",
+        "title": "商户管理",
         "icon": "upload",
         "views": [
           {
-            "title": "服务产品管理",
-            "name": "product",
+            "title": "子帐号列表",
+            "name": "sub_account_list",
             "type": "list"
           },
           {
-            "title": "签约商户管理",
-            "name": "contract",
-            "type": "list"
-          },{
-            "title": "骑士管理",
-            "name": "courier",
+            "title": "商户信息",
+            "name": "info",
+            "type": "form"
+          },
+          {
+            "title": "店铺列表",
+            "name": "shop_list",
             "type": "list"
           },
           {
-            "title": "站点管理",
-            "name": "dc",
+            "title": "服务商签约",
+            "name": "contract_provider",
             "type": "list"
           }
         ]
       },
       {
-        "model": "system",
-        "title": "系统管理",
+        "model": "develop",
+        "title": "开发者中心",
         "icon": "upload",
         "views": [
           {
-            "title": "用户管理",
-            "name": "user",
+            "title": "开发者信息",
+            "name": "info",
+            "type": "form"
+          },
+          {
+            "title": "第三方平台",
+            "name": "vendor_list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "product",
+        "title": "产品管理",
+        "icon": "upload",
+        "views": [
+          {
+            "title": "产品列表",
+            "name": "list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "contract",
+        "title": "签约商户管理",
+        "icon": "upload",
+        "views": [
+          {
+            "title": "签约商户列表",
+            "name": "list",
             "type": "list"
           }
         ]
       }
+
     ],
     "system": {
       "app_url_base": "/app/site/",
-      "sys_name": "调度系统",
+      "sys_name": "商户平台",
       "login_out": {
         "text": "退出系统",
         "url": "login/site_login_out"
       }
     }
-  }
+  },
+  "admin": {
+    "models":[
+      {
+        "model": "account",
+        "title": "账户管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "账号列表",
+            "name": "list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "partner",
+        "title": "商户管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "商户信息列表",
+            "name": "info_list",
+            "type": "list"
+          },
+          {
+            "title": "商户账号列表",
+            "name": "account_list",
+            "type": "list"
+          },
+          {
+            "title": "待处理审核列表",
+            "name": "verify_list",
+            "type": "list"
+          },
+          {
+            "title": "审核日志列表",
+            "name": "log_list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "label",
+        "title": "标签管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "标签列表",
+            "name": "list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "shop",
+        "title": "店铺管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "店铺列表",
+            "name": "list",
+            "type": "list"
+          },
+          {
+            "title": "待处理审核列表",
+            "name": "verify_list",
+            "type": "list"
+          },
+          {
+            "title": "审核日志列表",
+            "name": "log_list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "goods",
+        "title": "商品管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "分类列表",
+            "name": "category_list",
+            "type": "list"
+          },
+          {
+            "title": "标品列表",
+            "name": "product_list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "order",
+        "title": "订单管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "订单列表",
+            "name": "list",
+            "type": "list"
+          },
+          {
+            "title": "订单统计列表",
+            "name": "statistics_list",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "model": "template",
+        "title": "模板管理",
+        "icon": "Dashboard",
+        "views": [
+          {
+            "title": "模板列表",
+            "name": "list",
+            "type": "list"
+          }
+        ]
+      }
 
+    ],
+    "system": {
+      "app_url_base": "/app/admin/",
+      "sys_name": "商户平台后台",
+      "login_out": {
+        "text": "退出系统",
+        "url": "login/admin_login_out"
+      }
+    }
+  }
 }

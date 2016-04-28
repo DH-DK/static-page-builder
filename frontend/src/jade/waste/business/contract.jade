@@ -1,0 +1,35 @@
+extends ../../layout/site
+block page_content
+    #page-content.qh-list(data-qh-view='business-contract')
+      // content-header
+      .content-header
+        form.ui.form
+          .inline.fields
+            .three.wide.field
+              label 商家名称
+              input(type='text', name='name', placeholder='商家名称')
+            .three.wide.field
+              label 签约状态
+              .ui.fluid.selection.dropdown
+                i.dropdown.icon
+                input(type='hidden', name='state')
+                .default.text 签约状态
+                .menu
+                  each val in [{code:0,name:'待确认'},{code:100,name:'已签约'},{code:-100,name:'已解约'}]
+                    .item(data-value='#{val.code}') #{val.name}
+            .three.wide.field
+              label 审核状态
+              .ui.fluid.selection.dropdown
+                i.dropdown.icon
+                input(type='hidden', name='verify_state')
+                .default.text 审核状态
+                .menu
+                   each val in [{code:0,name:'待提交'},{code:1,name:'待审核'},{code:100,name:'审核通过'},{code:-100,name:'审核驳回'}]
+                    .item(data-value='#{val.code}') #{val.name}
+
+            include ../../base/table/queryBtn
+
+      // content-body
+      .content-body
+        include ../../base/table/main_table
+      .content-footer

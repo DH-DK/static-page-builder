@@ -35,7 +35,7 @@ require(AppSet.modules, function () {
         };
         setTimeout(function(){
             $msg.html('');
-        },1000);
+        },2500);
     };
     $('#get_code').click(function () {
         if(!$('input[name="account"]').val()){

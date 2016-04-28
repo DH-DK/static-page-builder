@@ -46,8 +46,13 @@ define('module_init', [], function () {
             'autoclose': true
         }, _data));
     });
-
-    //prestrain
+    $('.qh-timePicker .time').timepicker({
+        'showDuration': true,
+        'timeFormat': 'H:i',
+    });
+    $('.qh-datePicker').datepair();
+    $('.qh-timePicker').datepair();
+    //preload
     $('.qh-preload').each(function () {
         var $load = $(this);
         var _val = $load.data('qh-value');

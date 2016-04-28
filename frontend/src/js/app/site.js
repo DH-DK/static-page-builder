@@ -76,7 +76,6 @@ require(AppSet.modules, function () {
 
                 });
             }());
-
             break;
         default :
 

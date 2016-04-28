@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     fs = require('fs'),
     del = require('del'),
     path = require('path');
-    //iconv = require('iconv-lite');
+//iconv = require('iconv-lite');
 
 
 // 编译less，其中plumber是防止出错崩溃的插件
@@ -38,7 +38,7 @@ gulp.task('dust', function () {
 });
 
 
-gulp.task('jade', function () {
+gulp.task('jade:site', function () {
     gulp.src('src/jade/site/**/*.jade')
         .pipe(jade({
             data: require('./config/jade/site.json')
@@ -49,6 +49,19 @@ gulp.task('jade', function () {
             data: require('./config/jade/site.json')
         }))
         .pipe(gulp.dest('../templates/site'));
+    console.log('jade success');
+});
+gulp.task('jade:admin', function () {
+    gulp.src('src/jade/admin/**/*.jade')
+        .pipe(jade({
+            data: require('./config/jade/admin.json')
+        }))
+        .pipe(gulp.dest('../templates/admin'));
+    gulp.src('src/jade/login/login.jade')
+        .pipe(jade({
+            data: require('./config/jade/admin.json')
+        }))
+        .pipe(gulp.dest('../templates/admin'));
     console.log('jade success');
 });
 
@@ -64,7 +77,7 @@ gulp.task('vendor', function () {
     console.log('vendor success');
 });
 
-gulp.task('app', function () {
+gulp.task('app:site', function () {
     var _js_url_base = 'src/js/';
     var _site = ['config/site.js', 'model/site/*.js', 'module/*.js', 'app/site.js'].map(function(_js){
         return _js_url_base + _js;
@@ -79,9 +92,31 @@ gulp.task('app', function () {
     //        console.log('App success');
     //    }
     //});
-    //gulp.src(_site)
-    //    .pipe(concat('app_site.js'))
-    //    .pipe(gulp.dest('../web/js'));
+    gulp.src(_site)
+        .pipe(concat('app_site.js'))
+        .pipe(gulp.dest('../web/js'));
+    gulp.src(_login)
+        .pipe(concat('app_login.js'))
+        .pipe(gulp.dest('../web/js'));
+});
+gulp.task('app:admin', function () {
+    var _js_url_base = 'src/js/';
+    var _admin = ['config/admin.js', 'model/admin/*.js', 'module/*.js', 'app/admin.js'].map(function(_js){
+        return _js_url_base + _js;
+    });
+    var _login = ['config/login.js', 'module/tool.js', 'app/login.js'].map(function(_js){
+        return _js_url_base + _js;
+    });
+    //exec('node ./src/js/r.js -o ./src/js/admin_build.js', function (err, stdout, stderr) {
+    //    if (err) {
+    //        console.log('App fail');
+    //    } else {
+    //        console.log('App success');
+    //    }
+    //});
+    gulp.src(_admin)
+        .pipe(concat('app_admin.js'))
+        .pipe(gulp.dest('../web/js'));
     gulp.src(_login)
         .pipe(concat('app_login.js'))
         .pipe(gulp.dest('../web/js'));
@@ -105,6 +140,7 @@ gulp.task('del', function () {
     var DelArr = [
         'config/jade/*.json',
         'src/jade/site/*',
+        'src/jade/admin/*',
         'src/js/model/*',
     ];
     del(DelArr);
@@ -129,6 +165,10 @@ gulp.task('generator', function () {
         },
         config = {
             site: {
+                jade: {},
+                modCfg: {}
+            },
+            admin: {
                 jade: {},
                 modCfg: {}
             }
@@ -159,7 +199,7 @@ gulp.task('generator', function () {
                 _files.push({
                     type: _VIEWS[i].type,
                     path: {
-                        jade: [_path.jade, _modName].join('/') + '/',
+                        jade: [_path.jade[_appName], _modName].join('/') + '/',
                     },
                     name: {
                         jade: _VIEWS[i].name + '.jade',
@@ -200,7 +240,7 @@ gulp.task('generator', function () {
          * author: lixiang
          * message: 404 !!!   haodeba nishuodedui shikazhule zenmebanne guandiannaoba chongqi heiyo haibuchongqi ganshane zenmehuishi
          */
-        // create navbar config
+            // create navbar config
         mkdirsSync(_path.configJade);
         fs.writeFile(_path.configJade + _appName + '.json', JSON.stringify(config[_appName].jade));
 
